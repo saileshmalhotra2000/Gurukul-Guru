@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#111811" />
+    <title>Find Your Magnet · The Gurukul</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@300;400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./magnet.css" />
+  </head>
+  <body>
+    <main class="magnet-app">
+      <header class="app-header">
+        <a href="./library.html" class="back-link">← <span>Library</span></a>
+        <div class="app-title"><span>✦</span><div><b>Find Your Magnet</b><small>A guided inquiry</small></div></div>
+        <div class="header-tools">
+          <button class="sync-button" id="openSync" type="button" aria-label="Synchronize devices"><i id="syncDot"></i><span id="syncLabel">Sync</span></button>
+          <button class="view-dashboard" id="viewDashboard" type="button">Insights <span id="observationBadge">0</span></button>
+        </div>
+      </header>
+
+      <div class="progress-track" aria-hidden="true"><i id="progressBar"></i></div>
+
+      <section class="inquiry-view" id="inquiryView">
+        <aside class="inquiry-guide">
+          <div class="guide-orbit"><span>✦</span></div>
+          <p class="stage-label" id="stageLabel">The moment</p>
+          <h1 id="guideTitle">Begin with what happened.</h1>
+          <p id="guideText">Stay close to the facts. No interpretation is needed yet.</p>
+          <div class="guide-note"><span>Remember</span><p>You can pause at any time. Your words are saved on this device.</p></div>
+        </aside>
+
+        <section class="question-panel" aria-live="polite">
+          <div class="question-count"><span id="questionNumber">01</span> / <span id="questionTotal">11</span></div>
+          <div id="questionHost"></div>
+          <div class="question-actions">
+            <button class="secondary-button" id="previousQuestion" type="button">← Previous</button>
+            <button class="primary-button" id="nextQuestion" type="button">Continue <span>→</span></button>
+          </div>
+          <p class="autosave-state" id="autosaveState"><i></i> Reflection saved locally</p>
+        </section>
+      </section>
+
+      <section class="dashboard-view" id="dashboardView" hidden>
+        <div class="dashboard-heading">
+          <div><p class="stage-label">Your pattern field</p><h1>What your attention<br />keeps returning to.</h1></div>
+          <div class="dashboard-actions">
+            <button id="newObservation" type="button">+ New observation</button>
+            <button id="openSummary" type="button">View response summary</button>
+          </div>
+        </div>
+
+        <div class="empty-dashboard" id="emptyDashboard">
+          <span>✦</span>
+          <h2>Your pattern has not formed yet.</h2>
+          <p>Complete your first observation. With each return, the picture becomes clearer.</p>
+          <button type="button" id="emptyStart">Begin an observation</button>
+        </div>
+
+        <div class="dashboard-grid" id="dashboardGrid" hidden>
+          <article class="insight-card primary-insight">
+            <p>Emerging magnet</p>
+            <h2 id="topMagnet">—</h2>
+            <div class="confidence"><span><i id="confidenceBar"></i></span><b id="confidenceText">Early signal</b></div>
+            <blockquote id="patternNarrative"></blockquote>
+          </article>
+
+          <article class="insight-card metric-card">
+            <p>Observations</p><strong id="observationCount">0</strong><small id="returnRate">No return pattern yet</small>
+          </article>
+
+          <article class="insight-card metric-card">
+            <p>Protected value</p><strong id="topValue">—</strong><small id="valueCount">Waiting for evidence</small>
+          </article>
+
+          <article class="insight-card distribution-card">
+            <div class="card-heading"><p>Magnet constellation</p><small>Across all observations</small></div>
+            <div id="magnetDistribution"></div>
+          </article>
+
+          <article class="insight-card signal-card">
+            <div class="card-heading"><p>Signals worth noticing</p><small>Generated from your responses</small></div>
+            <ul id="signalsList"></ul>
+          </article>
+
+          <article class="insight-card history-card">
+            <div class="card-heading"><p>Recent observations</p><button id="clearHistory" type="button">Clear all</button></div>
+            <div id="historyList"></div>
+          </article>
+        </div>
+      </section>
+
+      <dialog class="summary-dialog" id="summaryDialog">
+        <form method="dialog">
+          <button class="dialog-close" value="close" aria-label="Close summary">×</button>
+        </form>
+        <p class="stage-label">Reflection record</p>
+        <h2>Your response summary</h2>
+        <div id="summaryContent"></div>
+        <div class="summary-actions">
+          <button id="copySummary" type="button">Copy summary</button>
+          <button id="downloadSummary" type="button">Download as text</button>
+        </div>
+      </dialog>
+
+      <dialog class="sync-dialog" id="syncDialog">
+        <form method="dialog">
+          <button class="dialog-close" value="close" aria-label="Close synchronization">×</button>
+        </form>
+        <p class="stage-label">Private device sync</p>
+        <h2>Carry your observations with you.</h2>
+        <p class="sync-intro">
+          Choose a private phrase of at least 12 characters. Enter the same phrase on
+          another device to merge your observations. Your phrase and readable answers
+          never leave your browser.
+        </p>
+
+        <div class="sync-security">
+          <span>◇</span>
+          <p><b>Zero-knowledge encryption</b><br />Netlify stores only an encrypted bundle that it cannot read.</p>
+        </div>
+
+        <label class="sync-label" for="syncPhrase">Private sync phrase</label>
+        <div class="phrase-field">
+          <input id="syncPhrase" type="password" autocomplete="off" minlength="12" placeholder="Use several memorable words…" />
+          <button id="togglePhrase" type="button" aria-label="Show sync phrase">Show</button>
+        </div>
+        <p class="phrase-note">Keep this somewhere safe. There is no password reset because the phrase is never sent to us.</p>
+
+        <div class="sync-state" id="syncState" hidden>
+          <i></i>
+          <div><b id="syncStateTitle">Connected for this session</b><small id="syncStateDetail"></small></div>
+        </div>
+
+        <div class="sync-actions">
+          <button class="sync-primary" id="connectSync" type="button">Connect & merge</button>
+          <button id="disconnectSync" type="button" hidden>Disconnect this device</button>
+        </div>
+      </dialog>
+
+      <div class="toast" id="magnetToast" role="status" aria-live="polite"></div>
+    </main>
+    <script src="./magnet.js"></script>
+  </body>
+</html>

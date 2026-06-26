@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0b120d" />
+    <meta
+      name="description"
+      content="The Journey at The Digital Gurukul — daily forest teachings with Rishi Vashishtha, Rama, and Lakshmana."
+    />
+    <title>The Journey · Digital Gurukul</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./journey.css" />
+  </head>
+  <body>
+    <main class="journey-shell">
+      <div class="journey-scene" aria-hidden="true">
+        <div class="scene-image"></div>
+        <div class="scene-glow"></div>
+        <div class="scene-mist"></div>
+        <div class="scene-river"></div>
+        <div class="scene-vignette"></div>
+      </div>
+
+      <header class="journey-header">
+        <a class="back-home" href="./index.html"><span>←</span> Return to the riverbank</a>
+        <div class="journey-brand">
+          <span class="seal">ॐ</span>
+          <span><b>The Journey</b><small>Daily teachings beside the river</small></span>
+        </div>
+        <a class="library-link" href="./library.html">Walk to the library <span>→</span></a>
+      </header>
+
+      <section class="journey-hero" aria-labelledby="journey-title">
+        <p class="kicker">The curriculum path · Eighteen stages</p>
+        <h1 id="journey-title">The journey now has a spine.</h1>
+        <p>
+          Each lesson belongs to a stage of discovery. Move slowly: attention first,
+          then inner movement, reaction, conditioning, contracts, belief, return,
+          magnets, and finally abiding.
+        </p>
+      </section>
+
+      <section class="stage-overview" aria-labelledby="stage-overview-title">
+        <div class="overview-heading">
+          <p class="kicker">Curriculum map</p>
+          <h2 id="stage-overview-title">Stages of the Gurukul journey</h2>
+        </div>
+        <div class="stage-map" id="stageMap"></div>
+      </section>
+
+      <section class="journey-layout" aria-label="Daily lessons">
+        <aside class="scroll-path" aria-labelledby="scroll-path-title">
+          <div class="path-heading">
+            <span>Lesson path</span>
+            <h2 id="scroll-path-title">By stage</h2>
+          </div>
+          <div class="stage-lessons" id="stageLessons"></div>
+          <div class="next-scroll">
+            <span>Next</span>
+            <p>As you share the next lessons, they will be placed under the stage where the discovery belongs.</p>
+          </div>
+        </aside>
+
+        <article class="lesson-reader" aria-live="polite">
+          <div class="reader-top">
+            <div>
+              <p class="lesson-date" id="lessonDate"></p>
+              <h2 id="lessonTitle"></h2>
+            </div>
+            <span class="stage-pill" id="lessonStage"></span>
+          </div>
+
+          <p class="lesson-discovery" id="lessonDiscovery"></p>
+
+          <figure class="lesson-visual" id="lessonVisual" hidden>
+            <img id="lessonVisualImage" alt="" />
+            <figcaption>
+              <span id="lessonVisualLabel"></span>
+              <strong id="lessonVisualMessage"></strong>
+            </figcaption>
+          </figure>
+
+          <section class="lesson-gallery" id="lessonGallery" hidden aria-labelledby="lesson-gallery-title">
+            <div class="film-heading">
+              <p class="kicker">Contemplation images</p>
+              <h3 id="lesson-gallery-title">See the inquiry</h3>
+            </div>
+            <div class="image-grid" id="lessonImageGrid"></div>
+          </section>
+
+          <section class="lesson-films" id="lessonFilms" hidden aria-labelledby="lesson-films-title">
+            <div class="film-heading">
+              <p class="kicker">Visual teaching</p>
+              <h3 id="lesson-films-title">Watch the lesson unfold</h3>
+            </div>
+            <div class="film-grid" id="lessonFilmGrid"></div>
+          </section>
+
+          <div class="reader-actions">
+            <button class="reader-button" id="markComplete" type="button">Mark today complete</button>
+            <button class="reader-button quiet" id="copyPrompt" type="button">Copy reflection prompt</button>
+          </div>
+
+          <div class="lesson-scroll" id="lessonScroll">
+            <p class="loading">The scroll is being opened…</p>
+          </div>
+
+          <section class="sadhana-card" aria-labelledby="sadhana-title">
+            <p class="kicker">Today’s Sadhana</p>
+            <h3 id="sadhana-title"></h3>
+            <p id="lessonSadhana"></p>
+          </section>
+
+          <section class="final-teaching" aria-labelledby="final-title">
+            <p class="kicker">Final Teaching</p>
+            <h3 id="final-title">The teaching to carry</h3>
+            <p id="lessonFinal"></p>
+          </section>
+
+          <section class="journal-card" aria-labelledby="journal-title">
+            <div>
+              <p class="kicker">Reflection journal</p>
+              <h3 id="journal-title">What did this scroll reveal today?</h3>
+            </div>
+            <textarea
+              id="journalEntry"
+              rows="6"
+              placeholder="Write quietly. No need to be polished. Let the first honest seeing appear."
+            ></textarea>
+            <p class="journal-note" id="journalNote">Saved privately in this browser.</p>
+          </section>
+        </article>
+      </section>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="./journey.js"></script>
+  </body>
+</html>
