@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#101813" />
+    <meta
+      name="description"
+      content="The Digital Gurukul — a quiet place for timeless teachings, reflection, and inner discovery."
+    />
+    <title>The Digital Gurukul</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="world" id="world">
+      <div class="scene" aria-hidden="true">
+        <div class="scene-image"></div>
+        <div class="sunrise"></div>
+        <div class="sun-glow"></div>
+        <div class="river-shimmer"></div>
+        <div class="mist mist-one"></div>
+        <div class="mist mist-two"></div>
+        <div class="rays"></div>
+        <div class="vignette"></div>
+        <div class="birds birds-one"><i></i><i></i><i></i></div>
+        <div class="birds birds-two"><i></i><i></i></div>
+        <div class="leaves" id="leaves"></div>
+        <div class="fireflies" id="fireflies"></div>
+      </div>
+
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="The Gurukul, home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 64 64" role="img">
+              <path d="M32 58V28m0 7L18 20m14 10 13-13M31 45 13 34m19 5 19-12" />
+              <path d="M11 18c5-11 16-15 21-6 5-9 17-5 21 6 8 1 10 11 4 16H7c-6-6-4-15 4-16Z" />
+              <path d="M23 58h18M28 51l-7 7m15-8 7 8" />
+            </svg>
+          </span>
+          <span>
+            <strong>The Gurukul</strong>
+            <small>A journey within</small>
+          </span>
+        </a>
+
+        <div class="header-actions">
+          <p class="dawn-time"><span></span><b id="greeting">Before sunrise</b></p>
+          <button class="sound-toggle" id="soundToggle" type="button" aria-pressed="false">
+            <span class="sound-icon" aria-hidden="true">
+              <i></i><i></i><i></i>
+            </span>
+            <span class="sound-copy"><b>Sound</b><small>Off</small></span>
+          </button>
+        </div>
+      </header>
+
+      <section class="welcome" aria-labelledby="welcome-title">
+        <div class="eyebrow"><span></span> Day 18 · The Yoga Vasistha <span></span></div>
+        <h1 id="welcome-title">Know the one<br />who is looking.</h1>
+        <p class="intro">
+          Before the world asks anything of you, sit for a moment.<br />
+          Today, we explore the quiet awareness behind every thought.
+        </p>
+
+        <button class="primary-journey" id="beginLesson" type="button">
+          <span class="button-orbit" aria-hidden="true"></span>
+          <span>
+            <small>Today's teaching · 12 min</small>
+            <b>Continue the journey</b>
+          </span>
+          <svg viewBox="0 0 32 16" aria-hidden="true">
+            <path d="M1 8h27M21 1l7 7-7 7" />
+          </svg>
+        </button>
+
+        <blockquote>
+          <span>“</span>
+          The real learning begins when you become quiet enough to notice.
+          <span>”</span>
+        </blockquote>
+      </section>
+
+      <nav class="places" aria-label="Places in the Gurukul">
+        <button class="place is-current" type="button" data-place="journey">
+          <span class="place-icon book-icon" aria-hidden="true">
+            <i></i><i></i>
+          </span>
+          <span><b>Journey</b><small>Continue where you left off</small></span>
+          <em>01</em>
+        </button>
+        <button class="place" type="button" data-place="library">
+          <span class="place-icon scroll-icon" aria-hidden="true"><i></i></span>
+          <span><b>Library</b><small>Walk among timeless teachings</small></span>
+          <em>02</em>
+        </button>
+        <button class="place" type="button" data-place="reflection">
+          <span class="place-icon quill-icon" aria-hidden="true"><i></i></span>
+          <span><b>Reflection</b><small>Sit with what has stirred</small></span>
+          <em>03</em>
+        </button>
+        <button class="place" type="button" data-place="map">
+          <span class="place-icon star-icon" aria-hidden="true">✦</span>
+          <span><b>Gurukul map</b><small>See the path unfolding</small></span>
+          <em>04</em>
+        </button>
+      </nav>
+
+      <div class="presence">
+        <span class="pulse"></span>
+        <span><b>18 seekers</b> are sitting quietly in the Gurukul</span>
+      </div>
+
+      <aside class="lesson-drawer" id="lessonDrawer" aria-hidden="true" aria-labelledby="lesson-title">
+        <button class="drawer-close" id="closeLesson" type="button" aria-label="Close lesson">×</button>
+        <div class="lesson-number">Today’s teaching · XVIII</div>
+        <div class="lotus-divider"><span></span>⌘<span></span></div>
+        <h2 id="lesson-title">The witness and the seen</h2>
+        <p>
+          Rishi Vashishtha asks Rama to look not at the thought, but at the one who
+          knows the thought has appeared.
+        </p>
+        <div class="dialogue-preview">
+          <span class="speaker">Vashishtha</span>
+          <p>“Can the eye see itself, Rama—or does it know itself by another light?”</p>
+        </div>
+        <button class="enter-lesson" type="button">
+          Enter the lesson <span>→</span>
+        </button>
+      </aside>
+
+      <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    </main>
+    <script src="./script.js"></script>
+  </body>
+</html>
