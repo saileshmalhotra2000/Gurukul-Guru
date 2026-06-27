@@ -1394,7 +1394,7 @@ const lessons = [
           "image": "./assets/stage-12/what-is-larger-right-now.png",
           "alt": "A seeker sits before a vast peaceful valley while disturbances appear beside him, asking what is larger: the disturbance or the field noticing it.",
           "label": "Key inquiry",
-          "message": "What is larger right now: the disturbance, or the field noticing it?"
+          "message": "What is larger right now: the disturbance, or the field in which I am noticing it?"
       },
       "films": [
           {
