@@ -1303,6 +1303,29 @@ const lessons = [
       "final": "Return to the seeing itself. Let the lesson become observation, not conclusion."
   },
   {
+      "id": "story-129",
+      "title": "What If Peace Was Already Present?",
+      "stageId": "stage-11",
+      "file": "./lessons/batch/story-129.txt",
+      "discovery": "Harmony matters because it holds the promise of Peace. But Peace may already be present within.",
+      "visual": {
+          "image": "./assets/stage-11/what-if-peace-was-already-present.png",
+          "alt": "Rishi Vashishtha teaches Rama and Lakshmana beside a river: Harmony holds the promise of peace, and peace may already be present within.",
+          "label": "Key inquiry",
+          "message": "What if Peace was already present within me?"
+      },
+      "films": [
+          {
+              "title": "What if Peace was already within me?",
+              "caption": "The inquiry deepens from Harmony as promise to Peace as inner presence.",
+              "src": "./assets/videos/what-if-peace-was-already-within-me.mp4"
+          }
+      ],
+      "sadhanaTitle": "Look for the promise",
+      "sadhana": "When Harmony feels important, ask: What is this promising me? Then ask: What if Peace is already present within?",
+      "final": "Harmony is the reminder. Peace is discovered when attention returns to its source."
+  },
+  {
       "id": "story-126",
       "title": "The Promise and the Possessor",
       "stageId": "stage-12",
@@ -1343,6 +1366,46 @@ const lessons = [
       "sadhanaTitle": "Reminder or source",
       "sadhana": "Ask: Am I protecting the reminder, or rediscovering the source?",
       "final": "Return to the seeing itself. Let the lesson become observation, not conclusion."
+  },
+  {
+      "id": "story-130",
+      "title": "Did Peace Really Leave?",
+      "stageId": "stage-12",
+      "file": "./lessons/batch/story-130.txt",
+      "discovery": "Peace may not have left. Attention may have become fascinated with the disturbance.",
+      "films": [
+          {
+              "title": "Did Peace really leave?",
+              "caption": "A quiet contemplation on whether Peace disappears, or attention simply moves toward disturbance.",
+              "src": "./assets/videos/did-peace-really-leave.mp4"
+          }
+      ],
+      "sadhanaTitle": "Look beneath the disturbance",
+      "sadhana": "When disturbance appears, ask: Did Peace really leave, or did attention become absorbed in the disturbance?",
+      "final": "Peace is not lost each time attention moves. Return, and see what remained."
+  },
+  {
+      "id": "story-131",
+      "title": "The Fascination of Attention",
+      "stageId": "stage-12",
+      "file": "./lessons/batch/story-131.txt",
+      "discovery": "Attention does not create reality. It creates prominence.",
+      "visual": {
+          "image": "./assets/stage-12/what-is-larger-right-now.png",
+          "alt": "A seeker sits before a vast peaceful valley while disturbances appear beside him, asking what is larger: the disturbance or the field noticing it.",
+          "label": "Key inquiry",
+          "message": "What is larger right now: the disturbance, or the field noticing it?"
+      },
+      "films": [
+          {
+              "title": "What is larger right now?",
+              "caption": "A gentle widening of attention from the disturbance to the field in which it appears.",
+              "src": "./assets/videos/what-is-larger-right-now.mp4"
+          }
+      ],
+      "sadhanaTitle": "Let attention widen",
+      "sadhana": "Three times today, when attention becomes absorbed in a disturbance, pause for one breath and ask: What is larger right now — the disturbance, or the field in which I am noticing it?",
+      "final": "What fills awareness is not always what is greatest. It may only be what attention has chosen to illuminate."
   },
   {
       "id": "supplement-bowstring-practice",
