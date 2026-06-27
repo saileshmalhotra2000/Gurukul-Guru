@@ -1602,6 +1602,7 @@ const lessonImageGrid = document.querySelector("#lessonImageGrid");
 const lessonFilms = document.querySelector("#lessonFilms");
 const lessonFilmGrid = document.querySelector("#lessonFilmGrid");
 const lessonScroll = document.querySelector("#lessonScroll");
+const lessonReader = document.querySelector(".lesson-reader");
 const lessonSadhana = document.querySelector("#lessonSadhana");
 const sadhanaTitle = document.querySelector("#sadhana-title");
 const lessonFinal = document.querySelector("#lessonFinal");
@@ -1716,7 +1717,7 @@ function renderLessonTabs() {
     stageGroup.querySelectorAll("[data-lesson-id]").forEach((button) => {
       button.addEventListener("click", () => {
         const lesson = lessons.find((item) => item.id === button.dataset.lessonId);
-        if (lesson) setActiveLesson(lesson);
+        if (lesson) setActiveLesson(lesson, { scrollToReader: true, updateUrl: true });
       });
     });
 
@@ -1815,7 +1816,7 @@ function escapeHtml(value) {
   });
 }
 
-function setActiveLesson(lesson) {
+function setActiveLesson(lesson, options = {}) {
   activeLesson = lesson;
   const state = loadState();
   const lessonNumber = lessons.findIndex((item) => item.id === lesson.id) + 1;
@@ -1886,6 +1887,18 @@ function setActiveLesson(lesson) {
 
   renderLessonTabs();
   loadScroll(lesson);
+
+  if (options.updateUrl) {
+    const url = new URL(window.location.href);
+    url.searchParams.set("lesson", lesson.id);
+    window.history.replaceState({}, "", url);
+  }
+
+  if (options.scrollToReader) {
+    window.setTimeout(() => {
+      lessonReader?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 80);
+  }
 }
 
 journalEntry.addEventListener("input", () => {
