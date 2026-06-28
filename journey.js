@@ -1298,6 +1298,19 @@ const lessons = [
       "stageId": "stage-11",
       "file": "./lessons/batch/story-125.txt",
       "discovery": "Nothing matters by itself. Everything matters because of the promise attached to it.",
+      "visual": {
+          "image": "./assets/stage-11/what-is-this-promising-me.png",
+          "alt": "Rishi Vashishtha asks Rama and Lakshmana to look beneath why something matters and ask what it is promising.",
+          "label": "Key inquiry",
+          "message": "What is this promising me?"
+      },
+      "films": [
+          {
+              "title": "What is this promising me?",
+              "caption": "The lesson turns from why something matters to the promise hidden beneath it.",
+              "src": "./assets/videos/what-is-this-promising-me.mp4"
+          }
+      ],
       "sadhanaTitle": "Name the promise",
       "sadhana": "When something matters, ask: What promise is attached to it?",
       "final": "Return to the seeing itself. Let the lesson become observation, not conclusion."
@@ -1954,4 +1967,4 @@ copyPrompt.addEventListener("click", async () => {
 const requestedLesson = new URLSearchParams(window.location.search).get("lesson");
 const initialLesson = lessons.find((lesson) => lesson.id === requestedLesson) || lessons[0];
 renderStageMap();
-setActiveLesson(initialLesson);
+setActiveLesson(initialLesson, { scrollToReader: Boolean(requestedLesson) });
