@@ -1408,6 +1408,29 @@ const lessons = [
       "final": "What fills awareness is not always what is greatest. It may only be what attention has chosen to illuminate."
   },
   {
+      "id": "story-134",
+      "title": "Am I Looking at the Bowl or the Whole River?",
+      "stageId": "stage-12",
+      "file": "./lessons/batch/story-134.txt",
+      "discovery": "The disturbance becomes overwhelming when attention mistakes the bowl for the whole river.",
+      "visual": {
+          "image": "./assets/stage-12/bowl-or-whole-river.png",
+          "alt": "A seeker compares a small bowl of river water holding a leaf with the vast river flowing at sunrise.",
+          "label": "Key inquiry",
+          "message": "Am I looking at the bowl, or the whole river?"
+      },
+      "films": [
+          {
+              "title": "Am I looking at the bowl or the river?",
+              "caption": "A quiet contemplation on widening attention from the small container to the whole flow.",
+              "src": "./assets/videos/bowl-or-whole-river.mp4"
+          }
+      ],
+      "sadhanaTitle": "Notice the bowl",
+      "sadhana": "When one disturbance seems to fill the whole mind, ask gently: Am I looking at the bowl, or the whole river?",
+      "final": "The small becomes overwhelming when attention forgets the vast. Return from the bowl to the river."
+  },
+  {
       "id": "supplement-bowstring-practice",
       "title": "Supplement — The Bowstring Practice",
       "stageId": "stage-1",
