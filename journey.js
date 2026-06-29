@@ -1444,6 +1444,29 @@ const lessons = [
       "final": "The small becomes overwhelming when attention forgets the vast. Return from the bowl to the river."
   },
   {
+      "id": "story-135",
+      "title": "The River Does Not Resist",
+      "stageId": "stage-12",
+      "file": "./lessons/batch/story-135.txt",
+      "discovery": "A disturbance is like a whirlpool: it circles for a while, but it has never left the river.",
+      "visual": {
+          "image": "./assets/stage-12/whirlpool-or-river.png",
+          "alt": "A seeker sits before a river, seeing a small whirlpool on one side and the vast flowing river on the other.",
+          "label": "Key inquiry",
+          "message": "Is this a whirlpool, or the whole river?"
+      },
+      "films": [
+          {
+              "title": "Whirlpool or river?",
+              "caption": "A quiet contemplation on seeing disturbance as a small movement within the wider river of awareness.",
+              "src": "./assets/videos/whirlpool-or-river.mp4"
+          }
+      ],
+      "sadhanaTitle": "Notice the river",
+      "sadhana": "Three times today, when a disturbance appears, ask: Is this a whirlpool, or the whole river?",
+      "final": "The river never becomes smaller because a whirlpool appears. Only attention forgets to notice the current that has been flowing all along."
+  },
+  {
       "id": "supplement-bowstring-practice",
       "title": "Supplement — The Bowstring Practice",
       "stageId": "stage-1",
