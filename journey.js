@@ -16,6 +16,7 @@ const lessons = [
       { title: "The riverbank settles", caption: "Rama and Lakshmana arrive into silence.", src: "./assets/videos/00-scene2.mp4" },
       { title: "Attention finds one post", caption: "The mind is gently gathered beneath the banyan.", src: "./assets/videos/01-attention-training.mp4" },
       { title: "The golden thread of attention", caption: "Awareness returns without force.", src: "./assets/videos/01-attention.mp4" },
+      { title: "Train your attention", caption: "Focus, drift, return, and repeat — the living rhythm of attention training.", src: "./assets/videos/day-1-attention-training.mp4" },
     ],
     discovery: "Before ruling action, speech, or reaction, learn first to hold attention gently.",
     sadhanaTitle: "Tie the mind gently to one post",
@@ -44,10 +45,23 @@ const lessons = [
   },
   {
       "id": "story-003",
-      "title": "Praise and the Second Circle",
+      "title": "Learn to pause before responding",
       "stageId": "stage-1",
       "file": "./lessons/batch/story-003.txt",
       "discovery": "Praise may be felt, but it need not become a place where you live.",
+      "visual": {
+          "image": "./assets/stage-1/reaction-or-pause.png",
+          "alt": "Rishi Vashishtha teaches Rama and Lakshmana the difference between immediate reaction and a conscious pause beside the river.",
+          "label": "Key message",
+          "message": "Learn to pause before responding"
+      },
+      "films": [
+          {
+              "title": "Reaction or pause",
+              "caption": "A visual teaching on how a pause creates freedom before response.",
+              "src": "./assets/videos/reaction-or-pause.mp4"
+          }
+      ],
       "sadhanaTitle": "Return to immediate experience",
       "sadhana": "Pause once today and return to the body, breath, sound, or sensation. Let presence be the simple act of returning.",
       "final": "Return to the seeing itself. Let the lesson become observation, not conclusion."
