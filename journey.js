@@ -7,9 +7,9 @@ const lessons = [
     file: "./lessons/foundation-01.txt",
     visual: {
       image: "./assets/attention-training.png",
-      alt: "Rishi Vashishtha teaching Rama and Lakshmana beneath a banyan tree as golden arcs of attention move through the gurukul.",
+      alt: "A four-part visual teaching showing focus, drift, return, and repeat as attention training beside the river.",
       label: "Key message",
-      message: "Tie the mind gently to one post.",
+      message: "Train your attention",
     },
     films: [
       { title: "The dawn gathering", caption: "The gurukul before the teaching begins.", src: "./assets/videos/00-scene1.mp4" },
