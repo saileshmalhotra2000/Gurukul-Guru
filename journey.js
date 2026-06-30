@@ -1467,6 +1467,29 @@ const lessons = [
       "final": "The river never becomes smaller because a whirlpool appears. Only attention forgets to notice the current that has been flowing all along."
   },
   {
+      "id": "story-136",
+      "title": "The Whirlpool Does Not Choose",
+      "stageId": "stage-12",
+      "file": "./lessons/batch/story-136.txt",
+      "discovery": "The disturbance is not created by the river alone. It forms where the current meets a hidden stone.",
+      "visual": {
+          "image": "./assets/stage-12/stone-whirlpool.png",
+          "alt": "Rishi Vashishtha draws Flow, Stone, and Whirlpool in wet sand beside the river while Rama and Lakshmana watch.",
+          "label": "Key inquiry",
+          "message": "What stone is this disturbance flowing around?"
+      },
+      "films": [
+          {
+              "title": "The Whirlpool Does Not Choose",
+              "caption": "The inquiry turns from observing the whirlpool to observing the stone that quietly shapes the flow.",
+              "src": "./assets/videos/stone-whirlpool.mp4"
+          }
+      ],
+      "sadhanaTitle": "Find the stone",
+      "sadhana": "Three times today, when a disturbance appears, ask: What is the stone here? Look deeper than the event and find the silent contract around which attention has begun to circle.",
+      "final": "The river does not create the whirlpool alone. The stone quietly gives it shape. Observe the stone, and the whirlpool is understood."
+  },
+  {
       "id": "supplement-bowstring-practice",
       "title": "Supplement — The Bowstring Practice",
       "stageId": "stage-1",
