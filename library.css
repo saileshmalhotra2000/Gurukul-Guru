@@ -281,6 +281,70 @@ a { color: inherit; }
 .future-tools h3 { margin: 0.7rem 0 0.3rem; font: 500 1.4rem "Cormorant Garamond", serif; }
 .future-tools p { margin: 0; color: rgba(247, 238, 213, 0.42); font-size: 0.67rem; }
 
+.awareness-shelf {
+  width: min(78rem, calc(100% - 3rem));
+  margin: 4rem auto 0;
+  padding-top: 3rem;
+  border-top: 1px solid var(--line);
+}
+
+.awareness-intro {
+  width: min(42rem, 100%);
+  margin: -0.25rem 0 1.5rem;
+  color: rgba(247, 238, 213, 0.62);
+  font-size: 0.82rem;
+  line-height: 1.8;
+}
+
+.awareness-video-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.awareness-video-card {
+  overflow: hidden;
+  margin: 0;
+  border: 1px solid rgba(231, 185, 78, 0.2);
+  border-radius: 1rem;
+  background:
+    linear-gradient(145deg, rgba(30, 42, 27, 0.72), rgba(8, 13, 9, 0.88));
+  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.24);
+}
+
+.awareness-video-card video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: rgba(5, 9, 6, 0.75);
+}
+
+.awareness-video-card div {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1rem 1.1rem 1.1rem;
+}
+
+.awareness-video-card span {
+  display: grid;
+  flex: 0 0 auto;
+  width: 2.35rem;
+  height: 2.35rem;
+  place-items: center;
+  border: 1px solid rgba(231, 185, 78, 0.34);
+  border-radius: 50%;
+  color: var(--gold);
+  font: 500 0.68rem "Manrope", sans-serif;
+  letter-spacing: 0.08em;
+}
+
+.awareness-video-card h3 {
+  margin: 0;
+  color: #f7e7ba;
+  font: 500 1.35rem/1.1 "Cormorant Garamond", serif;
+}
+
 footer {
   padding: 5rem 1rem 3rem;
   color: rgba(247, 238, 213, 0.55);
@@ -299,12 +363,14 @@ footer span { color: var(--gold); }
   .back-home { grid-row: 2; }
   .open-status { grid-row: 2; }
   .library-intro, .shelves { width: calc(100% - 2rem); }
+  .awareness-shelf { width: calc(100% - 2rem); }
   .library-intro { margin: 4rem auto; }
   .shelf-heading { display: block; }
   .shelf-heading h2 { margin-top: 0.5rem; }
   .tool-card { grid-template-columns: 1fr; }
   .tool-art { min-height: 20rem; border-right: 0; border-bottom: 1px solid var(--line); }
   .future-tools { grid-template-columns: 1fr; }
+  .awareness-video-grid { grid-template-columns: 1fr; }
 }
 
 @media (prefers-reduced-motion: reduce) {
