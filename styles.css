@@ -44,6 +44,10 @@ button {
   background: #101817;
 }
 
+.world.is-arrival {
+  cursor: pointer;
+}
+
 .scene,
 .scene > div {
   position: absolute;
@@ -101,7 +105,7 @@ button {
   left: 47% !important;
   width: 50% !important;
   height: 29% !important;
-  opacity: 0.42;
+  opacity: 0.5;
   background:
     repeating-linear-gradient(
       178deg,
@@ -111,7 +115,126 @@ button {
     );
   clip-path: polygon(9% 3%, 88% 0, 100% 88%, 31% 100%, 0 50%);
   mix-blend-mode: screen;
-  animation: river 8s linear infinite;
+  animation: river 5.5s linear infinite, water-breathe 8s ease-in-out infinite alternate;
+}
+
+.river-flow {
+  top: 47% !important;
+  left: 45% !important;
+  width: 54% !important;
+  height: 31% !important;
+  opacity: 0.36;
+  background:
+    radial-gradient(ellipse at 18% 35%, rgba(255, 247, 210, 0.22), transparent 18%),
+    radial-gradient(ellipse at 58% 42%, rgba(210, 232, 226, 0.16), transparent 22%),
+    repeating-linear-gradient(
+      166deg,
+      transparent 0 18px,
+      rgba(255, 245, 205, 0.09) 20px 23px,
+      transparent 25px 42px
+    );
+  clip-path: polygon(5% 6%, 90% 0, 100% 78%, 33% 100%, 0 55%);
+  filter: blur(0.9px);
+  mix-blend-mode: screen;
+  animation: river-flow 14s ease-in-out infinite alternate, river-current 7.5s linear infinite;
+}
+
+.flame-flicker {
+  top: 69% !important;
+  left: 39% !important;
+  width: clamp(5rem, 9vw, 9rem) !important;
+  height: clamp(4rem, 8vw, 7rem) !important;
+  background:
+    radial-gradient(ellipse at 48% 62%, rgba(255, 126, 28, 0.52), transparent 38%),
+    radial-gradient(ellipse at 52% 50%, rgba(255, 222, 116, 0.38), transparent 30%),
+    radial-gradient(ellipse at 52% 82%, rgba(255, 84, 18, 0.28), transparent 45%);
+  filter: blur(9px);
+  mix-blend-mode: screen;
+  opacity: 0.62;
+  transform-origin: 50% 78%;
+  animation: flame-flicker 2.4s ease-in-out infinite;
+}
+
+.arrival-video {
+  position: absolute;
+  z-index: 5;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  background: #101817;
+  transition: opacity 900ms ease;
+}
+
+.arrival-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.arrival-video::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 50% 42%, transparent 0 42%, rgba(7, 11, 8, 0.12) 68%, rgba(4, 6, 4, 0.5) 100%),
+    linear-gradient(0deg, rgba(3, 6, 4, 0.38), transparent 34%, rgba(6, 9, 8, 0.18));
+  pointer-events: none;
+}
+
+.world.is-video-playing .arrival-video {
+  opacity: 1;
+}
+
+.arrival-touch {
+  position: absolute;
+  z-index: 12;
+  inset: 0;
+  display: grid;
+  place-items: end center;
+  padding-bottom: clamp(2rem, 7vh, 5rem);
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.arrival-touch span {
+  width: 0.65rem;
+  height: 0.65rem;
+  border: 1px solid rgba(255, 230, 160, 0.72);
+  border-radius: 50%;
+  background: rgba(255, 220, 130, 0.28);
+  box-shadow: 0 0 0 0 rgba(242, 197, 91, 0.36), 0 0 22px rgba(255, 216, 132, 0.42);
+  animation: arrival-pulse 2.6s ease-in-out infinite;
+}
+
+.world:not(.is-arrival) .arrival-touch {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 600ms ease;
+}
+
+.reveal-ui {
+  transition: opacity 900ms ease, transform 900ms ease, filter 900ms ease;
+}
+
+.world.is-arrival .reveal-ui {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none;
+  filter: blur(0);
+  transform: translateY(0.75rem);
+}
+
+.world.is-arrival .welcome {
+  animation: none;
+}
+
+.world:not(.is-arrival) .reveal-ui {
+  opacity: 1;
+  visibility: visible;
+  filter: blur(0);
+  transform: translateY(0);
 }
 
 .mist {
@@ -783,6 +906,52 @@ blockquote span {
   to { background-position: 60px 12px; }
 }
 
+@keyframes water-breathe {
+  from { filter: brightness(0.92) saturate(0.95); }
+  to { filter: brightness(1.18) saturate(1.08); }
+}
+
+@keyframes river-flow {
+  from { transform: translate3d(-0.4%, 0.2%, 0) scaleX(1); }
+  to { transform: translate3d(0.8%, -0.25%, 0) scaleX(1.035); }
+}
+
+@keyframes river-current {
+  to { background-position: 90px 18px, -70px -12px, 120px 28px; }
+}
+
+@keyframes flame-flicker {
+  0%, 100% {
+    opacity: 0.42;
+    transform: translate3d(-1%, 1%, 0) scale(0.92, 0.86);
+  }
+  22% {
+    opacity: 0.72;
+    transform: translate3d(2%, -2%, 0) scale(1.04, 1.12);
+  }
+  47% {
+    opacity: 0.5;
+    transform: translate3d(-2%, 0, 0) scale(0.96, 1.02);
+  }
+  71% {
+    opacity: 0.78;
+    transform: translate3d(1%, -3%, 0) scale(1.08, 1.18);
+  }
+}
+
+@keyframes arrival-pulse {
+  0%, 100% {
+    opacity: 0.42;
+    transform: translateY(0) scale(0.92);
+    box-shadow: 0 0 0 0 rgba(242, 197, 91, 0.34), 0 0 20px rgba(255, 216, 132, 0.35);
+  }
+  50% {
+    opacity: 0.9;
+    transform: translateY(-0.25rem) scale(1);
+    box-shadow: 0 0 0 13px rgba(242, 197, 91, 0), 0 0 34px rgba(255, 216, 132, 0.58);
+  }
+}
+
 @keyframes mist-drift {
   to { background-position-x: 100%; }
 }
@@ -960,7 +1129,11 @@ blockquote span {
   .mist,
   .birds,
   .leaves,
-  .fireflies {
+  .fireflies,
+  .river-flow,
+  .flame-flicker,
+  .arrival-video,
+  .arrival-touch span {
     display: none;
   }
 }

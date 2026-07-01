@@ -15,15 +15,17 @@
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@300;400;500&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./styles.css?v=20260701-arrival-flow" />
   </head>
   <body>
-    <main class="world" id="world">
+    <main class="world is-arrival" id="world">
       <div class="scene" aria-hidden="true">
         <div class="scene-image"></div>
         <div class="sunrise"></div>
         <div class="sun-glow"></div>
+        <div class="river-flow"></div>
         <div class="river-shimmer"></div>
+        <div class="flame-flicker"></div>
         <div class="mist mist-one"></div>
         <div class="mist mist-two"></div>
         <div class="rays"></div>
@@ -34,7 +36,20 @@
         <div class="fireflies" id="fireflies"></div>
       </div>
 
-      <header class="topbar">
+      <div class="arrival-video" aria-hidden="true">
+        <video
+          id="arrivalVideo"
+          src="./assets/videos/gurukul-arrival-intro.mp4"
+          preload="auto"
+          playsinline
+        ></video>
+      </div>
+
+      <button class="arrival-touch" id="arrivalTouch" type="button" aria-label="Enter the Gurukul">
+        <span></span>
+      </button>
+
+      <header class="topbar reveal-ui">
         <a class="brand" href="#" aria-label="The Gurukul, home">
           <span class="brand-mark" aria-hidden="true">
             <svg viewBox="0 0 64 64" role="img">
@@ -60,7 +75,7 @@
         </div>
       </header>
 
-      <section class="welcome" aria-labelledby="welcome-title">
+      <section class="welcome reveal-ui" aria-labelledby="welcome-title">
         <div class="eyebrow"><span></span> Journey · The Foundation <span></span></div>
         <h1 id="welcome-title">Know the one<br />who is looking.</h1>
         <p class="intro">
@@ -86,7 +101,7 @@
         </blockquote>
       </section>
 
-      <nav class="places" aria-label="Places in the Gurukul">
+      <nav class="places reveal-ui" aria-label="Places in the Gurukul">
         <button class="place is-current" type="button" data-place="journey">
           <span class="place-icon book-icon" aria-hidden="true">
             <i></i><i></i>
@@ -111,7 +126,7 @@
         </button>
       </nav>
 
-      <div class="presence">
+      <div class="presence reveal-ui">
         <span class="pulse"></span>
         <span><b>18 seekers</b> are sitting quietly in the Gurukul</span>
       </div>
@@ -136,6 +151,6 @@
 
       <div class="toast" id="toast" role="status" aria-live="polite"></div>
     </main>
-    <script src="./script.js"></script>
+    <script src="./script.js?v=20260701-arrival-flow"></script>
   </body>
 </html>

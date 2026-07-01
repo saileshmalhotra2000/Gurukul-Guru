@@ -7,6 +7,9 @@ const toast = document.querySelector("#toast");
 const greeting = document.querySelector("#greeting");
 const leaves = document.querySelector("#leaves");
 const fireflies = document.querySelector("#fireflies");
+const world = document.querySelector("#world");
+const arrivalTouch = document.querySelector("#arrivalTouch");
+const arrivalVideo = document.querySelector("#arrivalVideo");
 
 let audioContext;
 let masterGain;
@@ -14,6 +17,47 @@ let soundOn = false;
 let birdTimer;
 let bellTimer;
 let toastTimer;
+let hasEntered = false;
+let hasStartedArrivalVideo = false;
+
+async function playArrivalVideo() {
+  if (hasStartedArrivalVideo) return;
+  hasStartedArrivalVideo = true;
+  world.classList.add("is-video-playing");
+  arrivalTouch.setAttribute("aria-label", "Reveal the Gurukul");
+
+  if (!arrivalVideo) return;
+
+  arrivalVideo.currentTime = 0;
+  try {
+    await arrivalVideo.play();
+  } catch (error) {
+    arrivalVideo.muted = true;
+    try {
+      await arrivalVideo.play();
+    } catch {
+      showToast("Tap once more to enter the Gurukul.");
+    }
+  }
+}
+
+function revealInterface() {
+  if (hasEntered) return;
+  hasEntered = true;
+  if (arrivalVideo) arrivalVideo.pause();
+  world.classList.remove("is-arrival");
+  world.classList.remove("is-video-playing");
+  arrivalTouch.setAttribute("aria-hidden", "true");
+}
+
+function handleArrivalStep() {
+  if (!hasStartedArrivalVideo) {
+    playArrivalVideo();
+    return;
+  }
+
+  revealInterface();
+}
 
 function setGreeting() {
   const hour = new Date().getHours();
@@ -156,6 +200,7 @@ function scheduleBell() {
 }
 
 soundToggle.addEventListener("click", async () => {
+  revealInterface();
   if (!audioContext) createAmbience();
   if (audioContext.state === "suspended") await audioContext.resume();
 
@@ -187,8 +232,15 @@ function closeLessonDrawer() {
 
 beginLesson.addEventListener("click", openLesson);
 closeLesson.addEventListener("click", closeLessonDrawer);
+arrivalTouch.addEventListener("click", handleArrivalStep);
 
 document.addEventListener("keydown", (event) => {
+  if (world.classList.contains("is-arrival") && ["Enter", " ", "Spacebar"].includes(event.key)) {
+    event.preventDefault();
+    handleArrivalStep();
+    return;
+  }
+
   if (event.key === "Escape" && lessonDrawer.classList.contains("is-open")) {
     closeLessonDrawer();
   }
@@ -225,6 +277,7 @@ function showToast(message) {
   toast.classList.add("show");
   toastTimer = window.setTimeout(() => toast.classList.remove("show"), 3200);
 }
+
 
 setGreeting();
 createLeaves();
