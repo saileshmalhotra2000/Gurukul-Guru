@@ -128,10 +128,42 @@ const lessons = [
   },
   {
       "id": "story-010",
-      "title": "When Two Paths Appear Right",
+      "title": "When dharma is unclear",
       "stageId": "stage-1",
       "file": "./lessons/batch/story-010.txt",
       "discovery": "When Dharma is unclear, search for signs: elders, life, stillness, and enduring principles.",
+      "visual": {
+          "image": "./assets/stage-1/when-dharma-is-unclear-0.png",
+          "alt": "Rishi Vashishtha teaches Rama and Lakshmana beside the river that when Dharma is unclear, the wise search for signs.",
+          "label": "Key teaching",
+          "message": "When Dharma is unclear, the wise search for signs."
+      },
+      "gallery": [
+          {
+              "src": "./assets/stage-1/when-dharma-is-unclear-1.png",
+              "alt": "A complete visual sequence on the signs to seek when Dharma is unclear.",
+              "title": "The full teaching sequence",
+              "caption": "Signs, direction, stillness, patience, and humility."
+          },
+          {
+              "src": "./assets/stage-1/when-dharma-is-unclear-2.png",
+              "alt": "Vashishtha teaches that the right path moves toward life, harmony, protection, and order.",
+              "title": "Observe where the path leads",
+              "caption": "The right path moves toward life."
+          },
+          {
+              "src": "./assets/stage-1/when-dharma-is-unclear-3.png",
+              "alt": "Rama asks about the crowd walking the wrong road as Vashishtha points toward inner stillness.",
+              "title": "When the crowd is wrong",
+              "caption": "When the mind becomes still, truth begins to reveal itself."
+          },
+          {
+              "src": "./assets/stage-1/when-dharma-is-unclear-4.png",
+              "alt": "Lakshmana asks what to do when the mind refuses to become still, and Vashishtha teaches patience.",
+              "title": "Patience reveals Dharma",
+              "caption": "Right action rarely demands haste."
+          }
+      ],
       "sadhanaTitle": "Return to immediate experience",
       "sadhana": "Pause once today and return to the body, breath, sound, or sensation. Let presence be the simple act of returning.",
       "final": "Return to the seeing itself. Let the lesson become observation, not conclusion."
